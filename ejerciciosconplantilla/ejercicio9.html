@@ -1,60 +1,334 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio de Naiara</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+    <!-- ==================== CSS AQUÍ ==================== -->
     <style>
+
+        /* ---------- GENERAL ---------- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: "Poppins", sans-serif;
         }
 
         body {
-            background-color: #fafafa;
+            background: #e3f4ff;
             color: #333;
         }
 
-        /* NAVBAR */
+        /* ---------- HEADER ---------- */
         header {
-            position: fixed;
             width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            background: rgba(255, 0, 80, 0.7);
-            padding: 15px 0;
-            color: white;
-        }
-
-        nav {
-            width: 90%;
-            margin: auto;
+            background: #b6e4ff;
             display: flex;
             justify-content: space-between;
+            padding: 15px 40px;
             align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #005c8a;
         }
 
         nav a {
-            color: #fff;
-            margin-left: 20px;
-            text-decoration: none;
+            margin: 0 15px;
             font-weight: 500;
-            transition: 0.3s;
+            text-decoration: none;
+            color: #075f88;
         }
 
         nav a:hover {
-            color: #ffddf0;
+            color: #003f5e;
         }
 
-        /* HERO */
+        /* ---------- HERO ---------- */
         .hero {
             height: 100vh;
-            background: url('https://images.unsplash.com/photo-1543589077-47d81606c1bf?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+            background: url('https://i.imgur.com/U9oVZkZ.jpeg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 70px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #003f5e;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin: 10px 0 20px;
+            color: #005c8a;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #5fc6ff;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #2fb3ff;
+        }
+
+        /* ---------- SOBRE MÍ ---------- */
+        .sobre-mi {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .sobre-mi h2 {
+            margin-bottom: 40px;
+            color: #003f5e;
+        }
+
+        .sobre-contenido {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .foto-perfil {
+            width: 230px;
+            border-radius: 50%;
+        }
+
+        .texto-sobre {
+            max-width: 500px;
+            text-align: left;
+        }
+
+        ul li {
+            margin: 5px 0;
+        }
+
+        /* ---------- PORTAFOLIO ---------- */
+        .portafolio {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .grid-portafolio {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .btn-card {
+            display: inline-block;
+            margin-top: 10px;
+            background: #7ed7ff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #003f5e;
+            font-weight: 600;
+        }
+
+        .btn-card:hover {
+            background: #52c6ff;
+        }
+
+        /* ---------- CONTACTO ---------- */
+        .contacto {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        form {
             display: flex;
             flex-direction: column;
+            gap: 15px;
+            max-width: 450px;
+            margin: auto;
+        }
+
+        input, textarea {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #8ecff1;
+        }
+
+        button {
+            background: #57caff;
+            padding: 12px;
+            border: none;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #31bbf8;
+        }
+
+        .redes img {
+            width: 40px;
+            margin: 10px;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .redes img:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            background: #b6e4ff;
+            padding: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ---------------- HEADER ---------------- -->
+    <header>
+        <div class="logo">NAIARA</div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#portafolio">Portafolio</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- ---------------- INICIO ---------------- -->
+    <section id="inicio" class="hero">
+        <div class="hero-text">
+            <h1>Hola, soy Naiara</h1>
+            <p>Portfolio personal • Creativa • Amante de la Navidad</p>
+            <a href="#portafolio" class="btn">Ver Portafolio</a>
+        </div>
+    </section>
+
+    <!-- ---------------- SOBRE MI ---------------- -->
+    <section id="sobre-mi" class="sobre-mi">
+        <h2>Sobre mí</h2>
+
+        <div class="sobre-contenido">
+            <img src="https://i.imgur.com/4ZQZ4dX.png" alt="Foto de Naiara" class="foto-perfil">
+
+            <div class="texto-sobre">
+                <p>
+                    ¡Hola! Soy <b>Naiara</b>, tengo <b>15 años</b> y me encanta la Navidad,
+                    el sushi, viajar y hacer deporte.  
+                    También amo ver <b>Stranger Things</b> y pasar tiempo con mi mejor amiga viendo Netflix en su casa.
+                </p>
+
+                <h3>Habilidades</h3>
+                <ul>
+                    <li>Creatividad</li>
+                    <li>Trabajo en equipo</li>
+                    <li>Diseño básico</li>
+                    <li>Responsabilidad</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ---------------- PORTAFOLIO ---------------- -->
+    <section id="portafolio" class="portafolio">
+        <h2>Mis Proyectos</h2>
+
+        <div class="grid-portafolio">
+
+            <div class="card">
+                <img src="https://i.imgur.com/jNNT8uU.jpeg" alt="Proyecto 1">
+                <h3>Proyecto 1</h3>
+                <p>Diseño simple de tarjeta creativa sobre mis intereses.</p>
+                <a href="#" class="btn-card">Ver más</a>
+            </div>
+
+            <div class="card">
+                <img src="https://i.imgur.com/yC8f2Er.jpeg" alt="Proyecto 2">
+                <h3>Proyecto 2</h3>
+                <p>Mini collage navideño inspirado en mis gustos.</p>
+                <a href="#" class="btn-card">Ver más</a>
+            </div>
+
+            <div class="card">
+                <img src="https://i.imgur.com/aF3i9Pj.jpeg" alt="Proyecto 3">
+                <h3>Proyecto 3</h3>
+                <p>Concepto visual de viajes y aventuras.</p>
+                <a href="#" class="btn-card">Ver más</a>
+            </div>
+
+            <div class="card">
+                <img src="https://i.imgur.com/DUzQG8O.jpeg" alt="Proyecto 4">
+                <h3>Proyecto 4</h3>
+                <p>Diseño simple inspirado en Stranger Things.</p>
+                <a href="#" class="btn-card">Ver más</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ---------------- CONTACTO ---------------- -->
+    <section id="contacto" class="contacto">
+        <h2>Contacto</h2>
+
+        <form>
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo" required>
+            <textarea placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div class="redes">
+            <a href="#"><img src="https://i.imgur.com/Yg7jZ5o.png" alt="Instagram"></a>
+            <a href="#"><img src="https://i.imgur.com/J46tqVf.png" alt="TikTok"></a>
+            <a href="#"><img src="https://i.imgur.com/sYBd2zx.png" alt="YouTube"></a>
+        </div>
+    </section>
+
+    <!-- ---------------- FOOTER ---------------- -->
+    <footer>
+        <p>© 2025 Naiara — Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
