@@ -1,208 +1,202 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio de Naiara</title>
 
-    <!-- ==================== CSS AQUÍ ==================== -->
     <style>
-
-        /* ---------- GENERAL ---------- */
+        /* --------- GENERAL --------- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background: #e3f4ff;
-            color: #333;
+            background: #cfefff; /* azul celeste claro */
+            color: #003f5e;
         }
 
-        /* ---------- HEADER ---------- */
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #003f5e;
+        }
+
+        /* --------- HEADER --------- */
         header {
             width: 100%;
-            background: #b6e4ff;
+            background: #8fd5ff;
+            padding: 15px 40px;
             display: flex;
             justify-content: space-between;
-            padding: 15px 40px;
             align-items: center;
             position: fixed;
             top: 0;
-            z-index: 1000;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         header .logo {
             font-size: 1.7rem;
-            font-weight: 700;
-            color: #005c8a;
+            font-weight: bold;
         }
 
         nav a {
-            margin: 0 15px;
-            font-weight: 500;
+            margin-left: 20px;
+            color: #003f5e;
+            font-weight: 600;
             text-decoration: none;
-            color: #075f88;
         }
 
         nav a:hover {
-            color: #003f5e;
+            color: #002c45;
         }
 
-        /* ---------- HERO ---------- */
-        .hero {
-            height: 100vh;
-            background: url('https://i.imgur.com/U9oVZkZ.jpeg') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* --------- INICIO --------- */
+        #inicio {
+            padding-top: 120px;
             text-align: center;
-            padding-top: 70px;
+            padding: 120px 20px 80px;
         }
 
-        .hero h1 {
+        #inicio h1 {
             font-size: 3rem;
-            color: #003f5e;
         }
 
-        .hero p {
+        #inicio p {
+            margin-top: 10px;
             font-size: 1.2rem;
-            margin: 10px 0 20px;
-            color: #005c8a;
         }
 
         .btn {
             display: inline-block;
-            background: #5fc6ff;
+            margin-top: 20px;
             padding: 12px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            color: black;
+            background: #5fc6ff;
+            border-radius: 30px;
             font-weight: 600;
+            text-decoration: none;
+            color: #003f5e;
             transition: 0.3s;
         }
 
         .btn:hover {
-            background: #2fb3ff;
+            background: #35b6ff;
         }
 
-        /* ---------- SOBRE MÍ ---------- */
-        .sobre-mi {
-            padding: 80px 10%;
-            text-align: center;
+        /* --------- SOBRE MI --------- */
+        #sobre-mi {
+            padding: 60px 10%;
         }
 
-        .sobre-mi h2 {
-            margin-bottom: 40px;
-            color: #003f5e;
-        }
-
-        .sobre-contenido {
+        .sobre-container {
             display: flex;
-            gap: 40px;
             justify-content: center;
+            align-items: center;
+            gap: 40px;
             flex-wrap: wrap;
         }
 
-        .foto-perfil {
-            width: 230px;
+        .sobre-container img {
+            width: 200px;
             border-radius: 50%;
+            border: 4px solid #8fd5ff;
         }
 
-        .texto-sobre {
+        .sobre-texto {
             max-width: 500px;
-            text-align: left;
         }
 
-        ul li {
-            margin: 5px 0;
+        .sobre-texto ul {
+            margin-top: 10px;
+            padding-left: 20px;
         }
 
-        /* ---------- PORTAFOLIO ---------- */
-        .portafolio {
-            padding: 80px 10%;
-            text-align: center;
+        /* --------- PORTAFOLIO --------- */
+        #portafolio {
+            padding: 60px 10%;
         }
 
-        .grid-portafolio {
-            margin-top: 40px;
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
         }
 
         .card {
-            background: #ffffff;
-            padding: 20px;
+            background: white;
             border-radius: 12px;
+            padding: 15px;
+            text-align: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             transition: 0.3s;
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
         }
 
         .card img {
             width: 100%;
             border-radius: 10px;
+            margin-bottom: 10px;
         }
 
         .btn-card {
             display: inline-block;
             margin-top: 10px;
-            background: #7ed7ff;
             padding: 8px 20px;
+            background: #8fd5ff;
             border-radius: 20px;
             text-decoration: none;
+            font-weight: bold;
             color: #003f5e;
-            font-weight: 600;
         }
 
         .btn-card:hover {
-            background: #52c6ff;
+            background: #5fc6ff;
         }
 
-        /* ---------- CONTACTO ---------- */
-        .contacto {
-            padding: 80px 10%;
+        /* --------- CONTACTO --------- */
+        #contacto {
+            padding: 60px 10%;
             text-align: center;
         }
 
         form {
+            max-width: 450px;
+            margin: auto;
             display: flex;
             flex-direction: column;
             gap: 15px;
-            max-width: 450px;
-            margin: auto;
         }
 
         input, textarea {
             padding: 12px;
             border-radius: 8px;
-            border: 1px solid #8ecff1;
+            border: 1px solid #7cc9e6;
         }
 
         button {
-            background: #57caff;
-            padding: 12px;
+            background: #5fc6ff;
             border: none;
+            padding: 12px;
             border-radius: 20px;
-            font-size: 1rem;
-            font-weight: 600;
+            font-weight: bold;
             cursor: pointer;
         }
 
         button:hover {
-            background: #31bbf8;
+            background: #35b6ff;
         }
 
         .redes img {
             width: 40px;
             margin: 10px;
-            opacity: 0.8;
+            opacity: .85;
             transition: 0.3s;
         }
 
@@ -211,12 +205,13 @@
             transform: scale(1.1);
         }
 
-        /* ---------- FOOTER ---------- */
+        /* --------- FOOTER --------- */
         footer {
-            background: #b6e4ff;
+            background: #8fd5ff;
             padding: 15px;
             text-align: center;
-            margin-top: 40px;
+            margin-top: 30px;
+            font-weight: bold;
         }
 
     </style>
@@ -224,10 +219,9 @@
 
 <body>
 
-    <!-- ---------------- HEADER ---------------- -->
+    <!-- HEADER -->
     <header>
         <div class="logo">NAIARA</div>
-
         <nav>
             <a href="#inicio">Inicio</a>
             <a href="#sobre-mi">Sobre mí</a>
@@ -236,30 +230,27 @@
         </nav>
     </header>
 
-    <!-- ---------------- INICIO ---------------- -->
-    <section id="inicio" class="hero">
-        <div class="hero-text">
-            <h1>Hola, soy Naiara</h1>
-            <p>Portfolio personal • Creativa • Amante de la Navidad</p>
-            <a href="#portafolio" class="btn">Ver Portafolio</a>
-        </div>
+    <!-- INICIO -->
+    <section id="inicio">
+        <h1>Hola, soy Naiara</h1>
+        <p>Portfolio personal • Creativa • Amante de la Navidad</p>
+        <a class="btn" href="#portafolio">Ver Portafolio</a>
     </section>
 
-    <!-- ---------------- SOBRE MI ---------------- -->
-    <section id="sobre-mi" class="sobre-mi">
+    <!-- SOBRE MI -->
+    <section id="sobre-mi">
         <h2>Sobre mí</h2>
 
-        <div class="sobre-contenido">
-            <img src="https://i.imgur.com/4ZQZ4dX.png" alt="Foto de Naiara" class="foto-perfil">
+        <div class="sobre-container">
+            <img src="https://i.imgur.com/4ZQZ4dX.png" alt="Foto Naiara">
 
-            <div class="texto-sobre">
+            <div class="sobre-texto">
                 <p>
-                    ¡Hola! Soy <b>Naiara</b>, tengo <b>15 años</b> y me encanta la Navidad,
-                    el sushi, viajar y hacer deporte.  
-                    También amo ver <b>Stranger Things</b> y pasar tiempo con mi mejor amiga viendo Netflix en su casa.
+                    Soy <b>Naiara</b>, tengo <b>15 años</b> y amo la Navidad, el sushi, viajar, hacer deporte y ver Stranger Things.
+                    Me encanta pasar tiempo con mi mejor amiga viendo Netflix en su casa.
                 </p>
 
-                <h3>Habilidades</h3>
+                <h3>Habilidades:</h3>
                 <ul>
                     <li>Creatividad</li>
                     <li>Trabajo en equipo</li>
@@ -270,45 +261,45 @@
         </div>
     </section>
 
-    <!-- ---------------- PORTAFOLIO ---------------- -->
-    <section id="portafolio" class="portafolio">
-        <h2>Mis Proyectos</h2>
+    <!-- PORTAFOLIO -->
+    <section id="portafolio">
+        <h2>Mis proyectos</h2>
 
-        <div class="grid-portafolio">
+        <div class="grid">
 
             <div class="card">
-                <img src="https://i.imgur.com/jNNT8uU.jpeg" alt="Proyecto 1">
+                <img src="https://i.imgur.com/jNNT8uU.jpeg">
                 <h3>Proyecto 1</h3>
-                <p>Diseño simple de tarjeta creativa sobre mis intereses.</p>
-                <a href="#" class="btn-card">Ver más</a>
+                <p>Tarjeta creativa con mis intereses.</p>
+                <a class="btn-card" href="#">Ver más</a>
             </div>
 
             <div class="card">
-                <img src="https://i.imgur.com/yC8f2Er.jpeg" alt="Proyecto 2">
+                <img src="https://i.imgur.com/yC8f2Er.jpeg">
                 <h3>Proyecto 2</h3>
-                <p>Mini collage navideño inspirado en mis gustos.</p>
-                <a href="#" class="btn-card">Ver más</a>
+                <p>Collage navideño inspirado en mis gustos.</p>
+                <a class="btn-card" href="#">Ver más</a>
             </div>
 
             <div class="card">
-                <img src="https://i.imgur.com/aF3i9Pj.jpeg" alt="Proyecto 3">
+                <img src="https://i.imgur.com/aF3i9Pj.jpeg">
                 <h3>Proyecto 3</h3>
                 <p>Concepto visual de viajes y aventuras.</p>
-                <a href="#" class="btn-card">Ver más</a>
+                <a class="btn-card" href="#">Ver más</a>
             </div>
 
             <div class="card">
-                <img src="https://i.imgur.com/DUzQG8O.jpeg" alt="Proyecto 4">
+                <img src="https://i.imgur.com/DUzQG8O.jpeg">
                 <h3>Proyecto 4</h3>
-                <p>Diseño simple inspirado en Stranger Things.</p>
-                <a href="#" class="btn-card">Ver más</a>
+                <p>Diseño inspirado en Stranger Things.</p>
+                <a class="btn-card" href="#">Ver más</a>
             </div>
 
         </div>
     </section>
 
-    <!-- ---------------- CONTACTO ---------------- -->
-    <section id="contacto" class="contacto">
+    <!-- CONTACTO -->
+    <section id="contacto">
         <h2>Contacto</h2>
 
         <form>
@@ -319,15 +310,14 @@
         </form>
 
         <div class="redes">
-            <a href="#"><img src="https://i.imgur.com/Yg7jZ5o.png" alt="Instagram"></a>
-            <a href="#"><img src="https://i.imgur.com/J46tqVf.png" alt="TikTok"></a>
-            <a href="#"><img src="https://i.imgur.com/sYBd2zx.png" alt="YouTube"></a>
+            <a href="#"><img src="https://i.imgur.com/Yg7jZ5o.png"></a>
+            <a href="#"><img src="https://i.imgur.com/J46tqVf.png"></a>
+            <a href="#"><img src="https://i.imgur.com/sYBd2zx.png"></a>
         </div>
     </section>
 
-    <!-- ---------------- FOOTER ---------------- -->
     <footer>
-        <p>© 2025 Naiara — Todos los derechos reservados.</p>
+        © 2025 Naiara — Todos los derechos reservados.
     </footer>
 
 </body>
